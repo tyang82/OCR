@@ -49,7 +49,7 @@ std::vector<cv::Rect> detectLetters(cv::Mat img)
 int main(){
     //reads the image
     Mat img_gray, img_thresh, img_new;
-    cv::Mat img1=cv::imread("testImage1.jpg", CV_LOAD_IMAGE_COLOR);
+    cv::Mat img1=cv::imread("something.jpg", CV_LOAD_IMAGE_COLOR);
 
 
     //filter before sending it
