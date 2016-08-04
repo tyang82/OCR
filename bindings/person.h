@@ -8,6 +8,7 @@ public:
   Person(string name,int year);
   string name;
   int year;
+  int getYear();
 private:
   int id;
 };

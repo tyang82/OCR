@@ -2,7 +2,8 @@
 #include <node.h>
 #include <string>
 #include "person.h"
-
+#include <iostream>
+using namespace std;
 namespace demo {
 
 using v8::Exception;
@@ -38,12 +39,20 @@ void Add(const FunctionCallbackInfo<Value>& args) {
   // Perform the operation
   double value = args[0]->NumberValue() + args[1]->NumberValue();
   Local<Number> num = Number::New(isolate, value);
-  std::cout<<"Local<Number> new = "<<Number::New(isolate,value)<<std::endl;
-  Person* aaron = new Person("Aaron",21);
-  Local<Person> person;
+  //std::cout<<"Local<Number> new = "<<Number::New(isolate,value)<<std::endl;
+  Person aaron;
+  //aaron.year;
+  Local<Object> obj = Object::New(isolate);
+  obj->Set(String::NewFromUtf8(isolate,"name"),String::NewFromUtf8(isolate,"Aaron"));
+  obj->Set(String::NewFromUtf8(isolate,"year"),Number::New(isolate,aaron.year));
+
+  //Local<Person> person;
+  //Local<Person> person = Object::New(isolate);
+  //person->Set(String::NewFromUtf8(isolate,"name"),String::New(isolate,"name"));
+  //person->Set(Number::New(isolate,"year"),Number::New(isolate,4));
   // Seteturn value (using the passed in
   // FunctionCallbackInfo<Value>&)
-  args.GetReturnValue().Set(num);
+  args.GetReturnValue().Set(obj);
 }
 
 void Init(Local<Object> exports) {

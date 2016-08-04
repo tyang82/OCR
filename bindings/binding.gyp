@@ -2,7 +2,7 @@
   "targets": [
     {
       "target_name": "addon",
-      "sources": [ "add.cpp" ]
+      "sources": [ "add.cpp","person.cpp","person.h" ]
     }
   ]
 }

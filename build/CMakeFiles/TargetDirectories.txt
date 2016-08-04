@@ -1,1 +1,0 @@
-/home/megan/Documents/Github/OCR/build/CMakeFiles/OCR.dir
