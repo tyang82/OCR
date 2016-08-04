@@ -77,8 +77,7 @@ INCS_Release := \
 	-I/home/ben/.node-gyp/5.4.0/deps/v8/include
 
 OBJS := \
-	$(obj).target/$(TARGET)/test.o \
-	$(obj).target/$(TARGET)/person.o
+	$(obj).target/$(TARGET)/add.o
 
 # Add to the list of files we specially track dependencies for.
 all_deps += $(OBJS)
